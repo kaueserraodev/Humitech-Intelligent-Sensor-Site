@@ -1,110 +1,1106 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Humitech | Sensor Inteligente</title>
 
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>HumiTech</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#031306;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    .container{
+      width:90%;
+      max-width:1450px;
+      margin:auto;
+    }
+
+    /* HEADER */
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:999;
+      background:rgba(0,0,0,0.88);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(140,255,0,.15);
+    }
+
+    .header-content{
+      height:95px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .logo img{
+      width:82px;
+      height:82px;
+      border-radius:50%;
+      border:2px solid #7dff00;
+      object-fit:cover;
+      box-shadow:0 0 25px rgba(125,255,0,.4);
+    }
+
+    .logo-text h1{
+      font-size:3rem;
+      font-weight:800;
+      line-height:1;
+    }
+
+    .logo-text span{
+      color:#84ff00;
+    }
+
+    .logo-text p{
+      letter-spacing:4px;
+      font-size:.85rem;
+      color:#ddd;
+      margin-top:4px;
+    }
+
+    nav{
+      display:flex;
+      gap:38px;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      font-size:1.08rem;
+      font-weight:500;
+      transition:.3s;
+      position:relative;
+    }
+
+    nav a:hover{
+      color:#84ff00;
+    }
+
+    nav a::after{
+      content:'';
+      position:absolute;
+      left:0;
+      bottom:-8px;
+      width:0%;
+      height:2px;
+      background:#84ff00;
+      transition:.3s;
+    }
+
+    nav a:hover::after{
+      width:100%;
+    }
+
+    .btn-top{
+      background:#6cb300;
+      color:#fff;
+      padding:14px 28px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .btn-top:hover{
+      background:#84ff00;
+      color:#000;
+      transform:translateY(-3px);
+      box-shadow:0 0 25px rgba(132,255,0,.35);
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      padding-top:120px;
+      position:relative;
+      background:
+      linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.78)),
+      url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop') center/cover;
+    }
+
+    .hero-content{
+      min-height:85vh;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      align-items:center;
+      gap:40px;
+    }
+
+    .hero-left h2{
+      font-size:7rem;
+      line-height:1;
+      margin-bottom:15px;
+      font-weight:800;
+    }
+
+    .hero-left h2 span{
+      color:#84ff00;
+    }
+
+    .hero-left h3{
+      font-size:2rem;
+      letter-spacing:8px;
+      font-weight:300;
+      margin-bottom:25px;
+    }
+
+    .hero-left p{
+      font-size:2rem;
+      line-height:1.5;
+      color:#e5e5e5;
+      max-width:750px;
+    }
+
+    .hero-left p span{
+      color:#84ff00;
+      font-weight:700;
+    }
+
+    .hero-right{
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .circle-bg{
+      position:absolute;
+      width:650px;
+      height:650px;
+      border-radius:50%;
+      border:28px solid #76d000;
+      right:-140px;
+    }
+
+    .hero-banner{
+      position:relative;
+      width:100%;
+      max-width:760px;
+      border-radius:30px;
+      overflow:hidden;
+      box-shadow:0 0 60px rgba(0,0,0,.7);
+    }
+
+    .hero-banner img{
+      width:100%;
+      display:block;
+    }
+
+    /* SEÇÕES */
+
+    section{
+      padding:120px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .section-title h2{
+      font-size:4rem;
+      margin-bottom:18px;
+    }
+
+    .section-title p{
+      color:#d4d4d4;
+      font-size:1.15rem;
+    }
+
+    /* SOBRE */
+
+    .sobre-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .sobre-box{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(132,255,0,.12);
+      border-radius:30px;
+      padding:50px;
+      backdrop-filter:blur(10px);
+    }
+
+    .sobre-box h3{
+      font-size:2.5rem;
+      margin-bottom:25px;
+      color:#84ff00;
+    }
+
+    .sobre-box p{
+      color:#ddd;
+      line-height:1.9;
+      font-size:1.1rem;
+    }
+
+    /* BENEFICIOS */
+
+    .benefits-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:25px;
+    }
+
+    .benefit{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(132,255,0,.12);
+      border-radius:28px;
+      padding:40px 25px;
+      text-align:center;
+      transition:.3s;
+    }
+
+    .benefit:hover{
+      transform:translateY(-8px);
+      box-shadow:0 0 35px rgba(132,255,0,.15);
+    }
+
+    .benefit-icon{
+      width:90px;
+      height:90px;
+      border-radius:50%;
+      border:2px solid #84ff00;
+      margin:auto;
+      margin-bottom:25px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:2.4rem;
+      color:#84ff00;
+    }
+
+    .benefit h4{
+      font-size:1.6rem;
+      margin-bottom:14px;
+    }
+
+    .benefit p{
+      color:#d7d7d7;
+      line-height:1.7;
+    }
+
+    /* PRODUTOS */
+
+    .produtos-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+      gap:35px;
+    }
+
+    .produto-card{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(132,255,0,.12);
+      border-radius:30px;
+      overflow:hidden;
+      transition:.4s;
+    }
+
+    .produto-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 35px rgba(132,255,0,.18);
+    }
+
+    .produto-card img{
+      width:100%;
+      height:280px;
+      object-fit:cover;
+    }
+
+    .produto-info{
+      padding:30px;
+    }
+
+    .produto-info h3{
+      font-size:2rem;
+      margin-bottom:15px;
+    }
+
+    .produto-info p{
+      color:#ddd;
+      line-height:1.7;
+      margin-bottom:25px;
+    }
+
+    .produto-info a{
+      display:inline-block;
+      background:#84ff00;
+      color:#000;
+      text-decoration:none;
+      padding:15px 30px;
+      border-radius:50px;
+      font-weight:700;
+      transition:.3s;
+    }
+
+    .produto-info a:hover{
+      transform:scale(1.05);
+      box-shadow:0 0 25px rgba(132,255,0,.35);
+    }
+
+    /* CONTATO */
+
+    .contato{
+      background:#021005;
+    }
+
+    .contato-wrapper{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:40px;
+      align-items:start;
+    }
+
+    .contato-info{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(132,255,0,.12);
+      border-radius:30px;
+      padding:45px;
+    }
+
+    .contato-info h3{
+      font-size:2.4rem;
+      margin-bottom:20px;
+      color:#84ff00;
+    }
+
+    .contato-info p{
+      color:#ddd;
+      line-height:1.8;
+      margin-bottom:20px;
+    }
+
+    .contato-item{
+      margin-bottom:18px;
+      font-size:1.05rem;
+      color:#f1f1f1;
+    }
+
+    form{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(132,255,0,.12);
+      border-radius:30px;
+      padding:45px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    form input,
+    form textarea,
+    form select{
+      width:100%;
+      padding:18px;
+      border-radius:16px;
+      border:1px solid rgba(132,255,0,.15);
+      background:#07150a;
+      color:#fff;
+      font-size:1rem;
+      outline:none;
+    }
+
+    form textarea{
+      min-height:170px;
+      resize:none;
+      grid-column:1/-1;
+    }
+
+    .full{
+      grid-column:1/-1;
+    }
+
+    form button{
+      grid-column:1/-1;
+      padding:18px;
+      border:none;
+      border-radius:50px;
+      background:#84ff00;
+      color:#000;
+      font-size:1.1rem;
+      font-weight:700;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    form button:hover{
+      transform:translateY(-3px);
+      box-shadow:0 0 30px rgba(132,255,0,.35);
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:35px;
+      text-align:center;
+      background:#000;
+      color:#ccc;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    /* RESPONSIVO */
+
+    @media(max-width:1200px){
+
+      .hero-content,
+      .sobre-grid,
+      .contato-wrapper{
+        grid-template-columns:1fr;
+      }
+
+      .hero-left{
+        text-align:center;
+      }
+
+      .hero-left p{
+        margin:auto;
+      }
+
+      .circle-bg{
+        display:none;
+      }
+
+    }
+
+    @media(max-width:900px){
+
+      nav{
+        display:none;
+      }
+
+      .hero-left h2{
+        font-size:4.8rem;
+      }
+
+      .hero-left p{
+        font-size:1.4rem;
+      }
+
+      .benefits-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      form{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+    @media(max-width:600px){
+
+      .hero-left h2{
+        font-size:3.3rem;
+      }
+
+      .hero-left h3{
+        font-size:1.2rem;
+      }
+
+      .hero-left p{
+        font-size:1.1rem;
+      }
+
+      .benefits-grid{
+        grid-template-columns:1fr;
+      }
+
+      .section-title h2{
+        font-size:2.8rem;
+      }
+
+    }
+
+  </style>
+
 </head>
 
 <body>
 
-<header>
-  <div class="container">
-    <h1>🌱 HUMITECH</h1>
-    <a href="#contato" class="btn">Falar com especialista</a>
-  </div>
-</header>
+  <!-- HEADER -->
 
-<section class="hero">
-  <div class="container">
-    <h2>Controle total da umidade do solo</h2>
-    <p>Tecnologia inteligente para máxima produtividade</p>
-    <a href="#contato" class="btn">Solicitar orçamento</a>
-  </div>
-</section>
+  <header>
 
-<section class="section">
-  <div class="container">
-    <h2>Benefícios</h2>
+    <div class="container header-content">
 
-    <div class="cards">
+      <div class="logo">
 
-      <div class="card">
-        <h3>💧 Economia</h3>
-        <p>Reduza desperdício de água</p>
+        <img
+          src="https://i.imgur.com/1bX5QH6.png"
+          alt="Logo HumiTech"
+        >
+
+        <div class="logo-text">
+
+          <h1>
+            Humi<span>tech</span>
+          </h1>
+
+          <p>
+            INTELLIGENT SENSOR
+          </p>
+
+        </div>
+
       </div>
 
-      <div class="card">
-        <h3>📈 Produção</h3>
-        <p>Aumente seus resultados</p>
+      <nav>
+
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre nós</a>
+        <a href="#tecnologia">Tecnologia</a>
+        <a href="#solucoes">Soluções</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#contato">Contato</a>
+
+      </nav>
+
+      <a
+        href="#contato"
+        class="btn-top"
+      >
+        Fale conosco
+      </a>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section
+    class="hero"
+    id="inicio"
+  >
+
+    <div class="container hero-content">
+
+      <div class="hero-left">
+
+        <h2>
+          Humi<span>tech</span>
+        </h2>
+
+        <h3>
+          INTELLIGENT SENSOR
+        </h3>
+
+        <p>
+          Tecnologia que conecta o
+          <span>campo</span> ao
+          <span>futuro</span>.
+        </p>
+
       </div>
 
-      <div class="card">
-        <h3>📱 Controle</h3>
-        <p>Monitoramento remoto</p>
+      <div class="hero-right">
+
+        <div class="circle-bg"></div>
+
+        <div class="hero-banner">
+
+          <img
+            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop"
+            alt="Banner HumiTech"
+          >
+
+        </div>
+
       </div>
 
     </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="container numeros">
+  </section>
 
-    <div>
-      <h3 class="numero" data-num="40">0%</h3>
-      <p>economia de água</p>
+  <!-- SOBRE -->
+
+  <section id="sobre">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Sobre Nós</h2>
+
+        <p>
+          Soluções inteligentes para agricultura e automação.
+        </p>
+
+      </div>
+
+      <div class="sobre-grid">
+
+        <div class="sobre-box">
+
+          <h3>
+            Nossa Missão
+          </h3>
+
+          <p>
+            A HumiTech desenvolve sensores inteligentes para
+            monitoramento agrícola, automação e Internet das Coisas.
+            Nossa tecnologia ajuda produtores e empresas a
+            economizar água, aumentar produtividade e tomar
+            decisões com dados em tempo real.
+          </p>
+
+        </div>
+
+        <div class="sobre-box">
+
+          <h3>
+            Inovação Tecnológica
+          </h3>
+
+          <p>
+            Trabalhamos com sensores de umidade, temperatura,
+            automação e sistemas inteligentes conectados ao campo.
+            Criamos soluções modernas para um futuro mais eficiente
+            e sustentável.
+          </p>
+
+        </div>
+
+      </div>
+
     </div>
 
-    <div>
-      <h3 class="numero" data-num="30">0%</h3>
-      <p>produtividade</p>
+  </section>
+
+  <!-- TECNOLOGIA -->
+
+  <section id="tecnologia">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Tecnologia</h2>
+
+        <p>
+          Monitoramento avançado com sensores inteligentes.
+        </p>
+
+      </div>
+
+      <div class="produtos-grid">
+
+        <div class="produto-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
+            alt="Sensor DHT11"
+          >
+
+          <div class="produto-info">
+
+            <h3>
+              Sensor DHT11
+            </h3>
+
+            <p>
+              Sensor de temperatura e umidade ideal
+              para automação agrícola e projetos IoT.
+            </p>
+
+            <a
+              href="https://www.mercadolivre.com.br"
+              target="_blank"
+            >
+              Comprar Agora
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="produto-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=1200&auto=format&fit=crop"
+            alt="Arduino"
+          >
+
+          <div class="produto-info">
+
+            <h3>
+              Arduino Uno
+            </h3>
+
+            <p>
+              Plataforma perfeita para automação,
+              sensores inteligentes e IoT.
+            </p>
+
+            <a
+              href="https://www.mercadolivre.com.br"
+              target="_blank"
+            >
+              Comprar Agora
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
 
-    <div>
-      <h3 class="numero" data-num="120">0</h3>
-      <p>clientes</p>
+  </section>
+
+  <!-- SOLUÇÕES -->
+
+  <section id="solucoes">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Soluções</h2>
+
+        <p>
+          Tecnologia aplicada ao campo e à automação.
+        </p>
+
+      </div>
+
+      <div class="sobre-grid">
+
+        <div class="sobre-box">
+
+          <h3>
+            Agricultura Inteligente
+          </h3>
+
+          <p>
+            Monitoramento em tempo real da umidade do solo,
+            controle climático e automação para lavouras.
+          </p>
+
+        </div>
+
+        <div class="sobre-box">
+
+          <h3>
+            IoT & Automação
+          </h3>
+
+          <p>
+            Sensores conectados à internet para análise,
+            controle remoto e geração de relatórios inteligentes.
+          </p>
+
+        </div>
+
+      </div>
+
     </div>
 
-  </div>
-</section>
+  </section>
 
-<section class="cta">
-  <h2>Solicite seu orçamento</h2>
-</section>
+  <!-- BENEFÍCIOS -->
 
-<section id="contato" class="section">
-  <div class="container">
+  <section
+    id="beneficios"
+  >
 
-    <form id="form" class="form-grid">
+    <div class="container">
 
-      <input type="text" id="nome" placeholder="Nome completo" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="tel" id="telefone" placeholder="Telefone" required>
+      <div class="section-title">
 
-      <input type="text" id="cep" placeholder="CEP">
+        <h2>
+          Benefícios
+        </h2>
 
-      <input type="text" id="rua" placeholder="Rua">
-      <input type="text" id="bairro" placeholder="Bairro">
-      <input type="text" id="cidade" placeholder="Cidade">
-      <input type="text" id="estado" placeholder="Estado">
+        <p>
+          Resultados reais com tecnologia inteligente.
+        </p>
 
-      <textarea placeholder="Mensagem"></textarea>
+      </div>
 
-      <button type="submit" class="btn">Enviar</button>
+      <div class="benefits-grid">
 
-    </form>
+        <div class="benefit">
 
-  </div>
-</section>
+          <div class="benefit-icon">
+            🌱
+          </div>
 
-<footer>
-  <p>© 2026 Humitech</p>
-</footer>
+          <h4>
+            Monitoramento
+          </h4>
 
-<script src="script.js"></script>
+          <p>
+            Controle agrícola em tempo real.
+          </p>
+
+        </div>
+
+        <div class="benefit">
+
+          <div class="benefit-icon">
+            💧
+          </div>
+
+          <h4>
+            Economia de Água
+          </h4>
+
+          <p>
+            Uso eficiente dos recursos naturais.
+          </p>
+
+        </div>
+
+        <div class="benefit">
+
+          <div class="benefit-icon">
+            🌿
+          </div>
+
+          <h4>
+            Sustentabilidade
+          </h4>
+
+          <p>
+            Mais produtividade com menos desperdício.
+          </p>
+
+        </div>
+
+        <div class="benefit">
+
+          <div class="benefit-icon">
+            📈
+          </div>
+
+          <h4>
+            Mais Resultados
+          </h4>
+
+          <p>
+            Dados inteligentes para decisões rápidas.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTATO -->
+
+  <section
+    class="contato"
+    id="contato"
+  >
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Entre em Contato
+        </h2>
+
+        <p>
+          Solicite um orçamento personalizado.
+        </p>
+
+      </div>
+
+      <div class="contato-wrapper">
+
+        <div class="contato-info">
+
+          <h3>
+            Fale com a HumiTech
+          </h3>
+
+          <p>
+            Nossa equipe está pronta para ajudar você
+            com soluções inteligentes para agricultura,
+            automação e monitoramento.
+          </p>
+
+          <div class="contato-item">
+            📞 (11) 99999-9999
+          </div>
+
+          <div class="contato-item">
+            📧 contato@humitech.com
+          </div>
+
+          <div class="contato-item">
+            📍 São Paulo - SP
+          </div>
+
+          <div class="contato-item">
+            🕒 Atendimento: Seg à Sex - 08h às 18h
+          </div>
+
+        </div>
+
+        <form id="formulario">
+
+          <input
+            type="text"
+            placeholder="Nome Completo"
+            required
+          >
+
+          <input
+            type="email"
+            placeholder="Seu Email"
+            required
+          >
+
+          <input
+            type="tel"
+            placeholder="Telefone"
+            required
+          >
+
+          <input
+            type="text"
+            placeholder="CEP"
+            required
+          >
+
+          <input
+            type="text"
+            placeholder="Rua"
+            required
+          >
+
+          <input
+            type="text"
+            placeholder="Número da Residência"
+            required
+          >
+
+          <input
+            type="text"
+            placeholder="Bairro"
+            required
+          >
+
+          <input
+            type="text"
+            placeholder="Cidade"
+            required
+          >
+
+          <select class="full">
+
+            <option>
+              Qual solução deseja?
+            </option>
+
+            <option>
+              Sensor DHT11
+            </option>
+
+            <option>
+              Automação Agrícola
+            </option>
+
+            <option>
+              IoT
+            </option>
+
+            <option>
+              Outro
+            </option>
+
+          </select>
+
+          <textarea
+            placeholder="Descreva sua necessidade..."
+          ></textarea>
+
+          <button type="submit">
+            Enviar Solicitação
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 HumiTech —
+    Todos os direitos reservados.
+
+  </footer>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    const formulario =
+      document.getElementById('formulario');
+
+    formulario.addEventListener(
+      'submit',
+      function(e){
+
+        e.preventDefault();
+
+        alert(
+          'Solicitação enviada com sucesso!'
+        );
+
+      }
+    );
+
+  </script>
 
 </body>
 </html>
