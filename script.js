@@ -1,5 +1,4 @@
 // CEP AUTOMÁTICO
-
 document.getElementById("cep").addEventListener("blur", function () {
 
   let cep = this.value.replace(/\D/g, "");
@@ -7,9 +6,7 @@ document.getElementById("cep").addEventListener("blur", function () {
   if (cep.length !== 8) return;
 
   fetch(`https://viacep.com.br/ws/${cep}/json/`)
-
     .then(response => response.json())
-
     .then(data => {
 
       if (data.erro) {
@@ -23,16 +20,13 @@ document.getElementById("cep").addEventListener("blur", function () {
       document.getElementById("estado").value = data.uf;
 
     })
-
     .catch(() => {
       alert("Erro ao buscar CEP.");
     });
 
 });
 
-
 // FORMULÁRIO
-
 document.getElementById("form").addEventListener("submit", function(e){
 
   e.preventDefault();
