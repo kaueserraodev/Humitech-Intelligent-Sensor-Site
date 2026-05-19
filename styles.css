@@ -1,0 +1,660 @@
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#031306;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    .container{
+      width:90%;
+      max-width:1450px;
+      margin:auto;
+    } 
+      
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:999;
+      background:rgba(0,0,0,0.88);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(140,255,0,.15);
+    }
+
+    .header-content{
+      height:95px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .logo img{
+      width:82px;
+      height:82px;
+      border-radius:50%;
+      border:2px solid #7dff00;
+      object-fit:cover;
+      box-shadow:0 0 25px rgba(125,255,0,.4);
+    }
+
+    .logo-text h1{
+      font-size:3rem;
+      font-weight:800;
+      line-height:1;
+    }
+
+    .logo-text span{
+      color:#84ff00;
+    }
+
+    .logo-text p{
+      letter-spacing:4px;
+      font-size:.85rem;
+      color:#ddd;
+      margin-top:4px;
+    }
+
+    nav{
+      display:flex;
+      gap:38px;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      font-size:1.08rem;
+      font-weight:500;
+      transition:.3s;
+      position:relative;
+    }
+
+    nav a:hover{
+      color:#84ff00;
+    }
+
+    nav a::after{
+      content:'';
+      position:absolute;
+      left:0;
+      bottom:-8px;
+      width:0%;
+      height:2px;
+      background:#84ff00;
+      transition:.3s;
+    }
+
+    nav a:hover::after{
+      width:100%;
+    }
+
+    .btn-top{
+      background:#6cb300;
+      color:#fff;
+      padding:14px 28px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .btn-top:hover{
+      background:#84ff00;
+      color:#000;
+      transform:translateY(-3px);
+      box-shadow:0 0 25px rgba(132,255,0,.35);
+    }
+
+    .hero{
+      min-height:100vh;
+      padding-top:120px;
+      position:relative;
+      background:
+      linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.78)),
+      url('campo/campo.png') center/cover;
+    }
+
+    .hero-content{
+      min-height:85vh;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      align-items:center;
+      gap:40px;
+    }
+
+    .hero-left h2{
+      font-size:7rem;
+      line-height:1;
+      margin-bottom:15px;
+      font-weight:800;
+    }
+
+    .hero-left h2 span{
+      color:#84ff00;
+    }
+
+    .hero-left h3{
+      font-size:2rem;
+      letter-spacing:8px;
+      font-weight:300;
+      margin-bottom:25px;
+    }
+
+    .hero-left p{
+      font-size:2rem;
+      line-height:1.5;
+      color:#e5e5e5;
+      max-width:750px;
+    }
+
+    .hero-left p span{
+      color:#84ff00;
+      font-weight:700;
+    }
+
+    .hero-right{
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .circle-bg{
+      position:absolute;
+      width:650px;
+      height:650px;
+      border-radius:50%;
+      border:28px solid #76d000;
+      right:-140px;
+    }
+
+    .hero-banner{
+      position:relative;
+      width:100%;
+      max-width:760px;
+      border-radius:30px;
+      overflow:hidden;
+      box-shadow:0 0 60px rgba(0,0,0,.7);
+    }
+
+    .hero-banner img{
+      width:100%;
+      display:block;
+    }
+
+    section{
+      padding:120px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .section-title h2{
+      font-size:4rem;
+      margin-bottom:18px;
+    }
+
+    .section-title p{
+      color:#d4d4d4;
+      font-size:1.15rem;
+    }
+
+    .membros-section{
+      padding:100px 0 80px;
+      background:rgba(0,0,0,.35);
+      border-radius:40px;
+      border:1px solid rgba(132,255,0,.12);
+      margin-bottom:80px;
+    }
+
+    .membros-title{
+      text-align:center;
+      font-size:4rem;
+      color:#84ff00;
+      margin-bottom:30px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+
+    .membro-area{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:40px;
+      align-items:start;
+    }
+
+    .membro-subsection{
+      display:grid;
+      gap:24px;
+      padding:30px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(132,255,0,.12);
+      border-radius:30px;
+      box-shadow:0 0 40px rgba(0,0,0,.25);
+    }
+
+    .membro-subtitle{
+      font-size:2rem;
+      color:#91ff00;
+      text-align:center;
+      margin-bottom:12px;
+      text-transform:uppercase;
+      letter-spacing:2px;
+    }
+
+    .membro-subtitle.gerente{
+      color:#fff;
+      text-shadow:0 0 18px rgba(145,255,0,.65);
+    }
+
+    .membro-subsection.gerente{
+      background:rgba(145,255,0,.06);
+      border-color:rgba(145,255,0,.25);
+      box-shadow:0 0 50px rgba(145,255,0,.16);
+      grid-column:1 / -1;
+    }
+
+    .membros-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .membros-grid.gerente-grid{
+      grid-template-columns:1fr;
+      max-width:520px;
+      margin:0 auto;
+    }
+
+    .membro-card{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 340px;
+      padding: 24px 18px 18px;
+      background:rgba(255,255,255,.025);
+      border:1px solid rgba(145,255,0,.12);
+      border-radius:26px;
+      overflow:hidden;
+      transition:.4s;
+      backdrop-filter:blur(8px);
+    }
+
+    .membro-card::before{
+      content:'';
+      position:absolute;
+      width:150px;
+      height:150px;
+      background:rgba(145,255,0,.08);
+      border-radius:50%;
+      top:-70px;
+      right:-50px;
+    }
+
+    .membro-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 0 35px rgba(145,255,0,.2);
+    }
+
+    .membro-card img{
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      object-fit:cover;
+      border:4px solid #91ff00;
+      margin-bottom:18px;
+      box-shadow:0 0 18px rgba(145,255,0,.22);
+      position:relative;
+      z-index:2;
+    }
+
+    .membro-card h4{
+      font-size:1.1rem;
+      margin-bottom:8px;
+      position:relative;
+      z-index:2;
+      line-height:1.4;
+      text-align:center;
+      min-height:56px;
+    }
+
+    .membro-card p{
+      color:#d6d6d6;
+      font-size:.95rem;
+      position:relative;
+      z-index:2;
+      text-align:center;
+      line-height:1.6;
+      margin:0;
+    }
+
+    .membro-card .cargo{
+      display:block;
+      margin-top:10px;
+      color:#b7ff81;
+      font-size:.95rem;
+      font-weight:600;
+    }
+
+    .sobre-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .sobre-box{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(132,255,0,.12);
+      border-radius:30px;
+      padding:50px;
+      backdrop-filter:blur(10px);
+    }
+
+    .sobre-box h3{
+      font-size:2.5rem;
+      margin-bottom:25px;
+      color:#84ff00;
+    }
+
+    .sobre-box p{
+      color:#ddd;
+      line-height:1.9;
+      font-size:1.1rem;
+    }
+
+    .benefits-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:25px;
+    }
+
+    .benefit{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(132,255,0,.12);
+      border-radius:28px;
+      padding:40px 25px;
+      text-align:center;
+      transition:.3s;
+    }
+
+    .benefit:hover{
+      transform:translateY(-8px);
+      box-shadow:0 0 35px rgba(132,255,0,.15);
+    }
+
+    .benefit-icon{
+      width:90px;
+      height:90px;
+      border-radius:50%;
+      border:2px solid #84ff00;
+      margin:auto;
+      margin-bottom:25px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:2.4rem;
+      color:#84ff00;
+    }
+
+    .benefit h4{
+      font-size:1.6rem;
+      margin-bottom:14px;
+    }
+
+    .benefit p{
+      color:#d7d7d7;
+      line-height:1.7;
+    }
+
+    .produtos-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+      gap:35px;
+    }
+
+    .produto-card{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(132,255,0,.12);
+      border-radius:30px;
+      overflow:hidden;
+      transition:.4s;
+    }
+
+    .produto-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 35px rgba(132,255,0,.18);
+    }
+
+    .produto-card img{
+      width:100%;
+      height:280px;
+      object-fit:cover;
+    }
+
+    .produto-info{
+      padding:30px;
+    }
+
+    .produto-info h3{
+      font-size:2rem;
+      margin-bottom:15px;
+    }
+
+    .produto-info p{
+      color:#ddd;
+      line-height:1.7;
+      margin-bottom:25px;
+    }
+
+    .produto-info a{
+      display:inline-block;
+      background:#84ff00;
+      color:#000;
+      text-decoration:none;
+      padding:15px 30px;
+      border-radius:50px;
+      font-weight:700;
+      transition:.3s;
+    }
+
+    .produto-info a:hover{
+      transform:scale(1.05);
+      box-shadow:0 0 25px rgba(132,255,0,.35);
+    }
+
+    .contato{
+      background:#021005;
+    }
+
+    .contato-wrapper{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:40px;
+      align-items:start;
+    }
+
+    .contato-info{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(132,255,0,.12);
+      border-radius:30px;
+      padding:45px;
+    }
+
+    .contato-info h3{
+      font-size:2.4rem;
+      margin-bottom:20px;
+      color:#84ff00;
+    }
+
+    .contato-info p{
+      color:#ddd;
+      line-height:1.8;
+      margin-bottom:20px;
+    }
+
+    .contato-item{
+      margin-bottom:18px;
+      font-size:1.05rem;
+      color:#f1f1f1;
+    }
+
+    form{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(132,255,0,.12);
+      border-radius:30px;
+      padding:45px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    form input,
+    form textarea,
+    form select{
+      width:100%;
+      padding:18px;
+      border-radius:16px;
+      border:1px solid rgba(132,255,0,.15);
+      background:#07150a;
+      color:#fff;
+      font-size:1rem;
+      outline:none;
+    }
+
+    form textarea{
+      min-height:170px;
+      resize:none;
+      grid-column:1/-1;
+    }
+
+    .full{
+      grid-column:1/-1;
+    }
+
+    form button{
+      grid-column:1/-1;
+      padding:18px;
+      border:none;
+      border-radius:50px;
+      background:#84ff00;
+      color:#000;
+      font-size:1.1rem;
+      font-weight:700;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    form button:hover{
+      transform:translateY(-3px);
+      box-shadow:0 0 30px rgba(132,255,0,.35);
+    }
+
+    footer{
+      padding:35px;
+      text-align:center;
+      background:#000;
+      color:#ccc;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    @media(max-width:1200px){
+
+      .hero-content,
+      .sobre-grid,
+      .contato-wrapper{
+        grid-template-columns:1fr;
+      }
+
+      .hero-left{
+        text-align:center;
+      }
+
+      .hero-left p{
+        margin:auto;
+      }
+
+      .circle-bg{
+        display:none;
+      }
+
+    }
+
+    @media(max-width:900px){
+
+      nav{
+        display:none;
+      }
+
+      .hero-left h2{
+        font-size:4.8rem;
+      }
+
+      .hero-left p{
+        font-size:1.4rem;
+      }
+
+      .benefits-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .membro-area{
+        grid-template-columns:1fr;
+      }
+
+      .membros-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      form{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+    @media(max-width:600px){
+
+      .hero-left h2{
+        font-size:3.3rem;
+      }
+
+      .hero-left h3{
+        font-size:1.2rem;
+      }
+
+      .hero-left p{
+        font-size:1.1rem;
+      }
+
+      .benefits-grid{
+        grid-template-columns:1fr;
+      }
+
+      .membros-grid{
+        grid-template-columns:1fr;
+      }
+
+      .section-title h2{
+        font-size:2.8rem;
+      }
+
+    }
+
+  
