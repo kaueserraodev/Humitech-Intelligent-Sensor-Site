@@ -214,145 +214,6 @@
       font-size:1.15rem;
     }
 
-    .membros-section{
-      padding:100px 0 80px;
-      background:rgba(0,0,0,.35);
-      border-radius:40px;
-      border:1px solid rgba(132,255,0,.12);
-      margin-bottom:80px;
-    }
-
-    .membros-title{
-      text-align:center;
-      font-size:4rem;
-      color:#84ff00;
-      margin-bottom:30px;
-      letter-spacing:1px;
-      text-transform:uppercase;
-    }
-
-    .membro-area{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:40px;
-      align-items:start;
-    }
-
-    .membro-subsection{
-      display:grid;
-      gap:24px;
-      padding:30px;
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(132,255,0,.12);
-      border-radius:30px;
-      box-shadow:0 0 40px rgba(0,0,0,.25);
-    }
-
-    .membro-subtitle{
-      font-size:2rem;
-      color:#91ff00;
-      text-align:center;
-      margin-bottom:12px;
-      text-transform:uppercase;
-      letter-spacing:2px;
-    }
-
-    .membro-subtitle.gerente{
-      color:#fff;
-      text-shadow:0 0 18px rgba(145,255,0,.65);
-    }
-
-    .membro-subsection.gerente{
-      background:rgba(145,255,0,.06);
-      border-color:rgba(145,255,0,.25);
-      box-shadow:0 0 50px rgba(145,255,0,.16);
-      grid-column:1 / -1;
-    }
-
-    .membros-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:24px;
-    }
-
-    .membros-grid.gerente-grid{
-      grid-template-columns:1fr;
-      max-width:520px;
-      margin:0 auto;
-    }
-
-    .membro-card{
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 340px;
-      padding: 24px 18px 18px;
-      background:rgba(255,255,255,.025);
-      border:1px solid rgba(145,255,0,.12);
-      border-radius:26px;
-      overflow:hidden;
-      transition:.4s;
-      backdrop-filter:blur(8px);
-    }
-
-    .membro-card::before{
-      content:'';
-      position:absolute;
-      width:150px;
-      height:150px;
-      background:rgba(145,255,0,.08);
-      border-radius:50%;
-      top:-70px;
-      right:-50px;
-    }
-
-    .membro-card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 0 35px rgba(145,255,0,.2);
-    }
-
-    .membro-card img{
-      width:120px;
-      height:120px;
-      border-radius:50%;
-      object-fit:cover;
-      border:4px solid #91ff00;
-      margin-bottom:18px;
-      box-shadow:0 0 18px rgba(145,255,0,.22);
-      position:relative;
-      z-index:2;
-    }
-
-    .membro-card h4{
-      font-size:1.1rem;
-      margin-bottom:8px;
-      position:relative;
-      z-index:2;
-      line-height:1.4;
-      text-align:center;
-      min-height:56px;
-    }
-
-    .membro-card p{
-      color:#d6d6d6;
-      font-size:.95rem;
-      position:relative;
-      z-index:2;
-      text-align:center;
-      line-height:1.6;
-      margin:0;
-    }
-
-    .membro-card .cargo{
-      display:block;
-      margin-top:10px;
-      color:#b7ff81;
-      font-size:.95rem;
-      font-weight:600;
-    }
-
     .sobre-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -422,6 +283,68 @@
     .benefit p{
       color:#d7d7d7;
       line-height:1.7;
+    }
+
+    #equipe{
+      background:#041808;
+    }
+    #equipe .section-title h2{
+      color:#84ff00;
+    }
+
+#equipe .section-title p{
+  max-width:700px;
+  margin:auto;
+    }
+
+    .equipe-grid{
+     display:grid;
+     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+     gap:30px;
+     margin-top:50px;
+    }
+
+    .membro-card{
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(132,255,0,.12);
+    border-radius:28px;
+    padding:35px 25px;
+    text-align:center;
+    transition:.4s;
+    backdrop-filter:blur(10px);
+    }
+
+    .membro-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 35px rgba(132,255,0,.15);
+    }
+
+    .membro-card img{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:20px;
+    border:4px solid #84ff00;
+    box-shadow:0 0 20px rgba(132,255,0,.25);
+    }
+
+    .membro-card h3{
+    font-size:1.5rem;
+    margin-bottom:10px;
+    color:#84ff00;
+    }
+
+    .membro-card span{
+    display:block;
+    color:#cfcfcf;
+    font-weight:600;
+    margin-bottom:15px;
+    }
+
+    .membro-card p{
+    color:#ddd;
+    line-height:1.7;
     }
 
     .produtos-grid{
@@ -615,14 +538,6 @@
         grid-template-columns:1fr 1fr;
       }
 
-      .membro-area{
-        grid-template-columns:1fr;
-      }
-
-      .membros-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-
       form{
         grid-template-columns:1fr;
       }
@@ -643,12 +558,17 @@
         font-size:1.1rem;
       }
 
-      .benefits-grid{
+      .equipe-grid{
         grid-template-columns:1fr;
       }
 
-      .membros-grid{
-        grid-template-columns:1fr;
+      .membro-card{
+  padding:25px 20px;
+      }
+
+      .membro-card img{
+       width:110px;
+       height:110px;
       }
 
       .section-title h2{
